@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login Admin</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><style>
+:root{--brown:#6f563f;--dark:#5a3a1e;--cream:#fff7f2;--peach:#ffeadd;--line:#e6d2c4;--ink:#1c1b19;--muted:#7a6a5e;--red:#b3261e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Roboto,Arial,sans-serif;background:var(--cream);color:var(--ink);display:flex;min-height:100vh;font-size:14px}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.side{width:208px;background:var(--brown);color:#fff;padding:60px 18px 30px;position:sticky;top:0;height:100vh;flex:none}
+.side .brand{text-align:center;margin-bottom:46px}
+.side .brand img{width:90px;margin:0 auto 14px;border-radius:12px}
+.side .brand b{display:block;font-size:16px;letter-spacing:.05em;font-weight:500}
+.side .brand small{font-size:9px;opacity:.7}
+.side a{display:flex;align-items:center;gap:12px;padding:14px 12px;border-radius:8px;margin-bottom:10px;font-size:15px;box-shadow:0 2px 3px rgba(0,0,0,.25)}
+.side a i:first-child{width:20px;text-align:center}
+.side a i:last-child{margin-left:auto;font-size:9px}
+.side a.on{background:#ffdcc4;color:var(--dark)}
+.side hr{border:0;border-top:1px solid rgba(255,255,255,.6);margin:18px 0}
+.main{flex:1;padding:44px 42px 30px;min-width:0;display:flex;flex-direction:column}
+.main>.body{flex:1}
+.top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px;gap:20px}
+h1{font-size:30px;font-weight:400}
+.top p{font-size:12px;color:var(--muted);margin-top:6px}
+.top .back{display:flex;gap:12px;align-items:center}
+.top .back h1{font-size:22px}
+.top .adm{font-size:12px;color:var(--muted)}
+.foot{border-top:1px solid var(--line);padding-top:20px;margin-top:30px;font-size:10px;font-weight:700;color:var(--dark)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--brown);color:#fff;border:1px solid var(--brown);padding:10px 18px;border-radius:4px;font:500 12px Roboto,sans-serif;cursor:pointer}
+.btn.brown{background:#8a5516;border-color:#8a5516}
+.btn.o{background:#fff;color:var(--dark)}
+.card{background:#fff;border:1px solid var(--line);border-radius:3px}
+/* dashboard */
+.date{display:flex;align-items:center;gap:12px;font-size:15px}
+.date i{background:#e7dcd4;width:34px;height:34px;display:grid;place-items:center;border-radius:8px}
+.h2{font-size:20px;font-weight:400;margin:26px 0 14px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mc{padding:20px 20px 14px;display:flex;flex-direction:column;gap:12px;color:var(--muted);font-size:13px}
+.mc h3{display:flex;align-items:center;gap:12px;font-size:17px;font-weight:400;color:var(--ink)}
+.mc h3 i:last-child{margin-left:auto;font-size:13px}
+.mc small{border-top:1px solid var(--line);margin-top:auto;padding-top:12px;font-size:10px}
+.st{padding:20px;color:var(--muted);font-size:12px}
+.st b{font-size:26px;font-weight:400;color:var(--ink);margin-right:8px}
+.dl{display:grid;grid-template-columns:1fr 280px;gap:28px;align-items:start}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:var(--peach);text-align:left;font-weight:500;font-size:11px;padding:10px 20px;color:var(--muted)}
+td{padding:14px 20px;border-bottom:1px solid var(--line);color:var(--muted)}
+td b{font-weight:400;color:var(--ink)}
+td img{width:48px;height:48px;object-fit:cover;border-radius:3px}
+td .ic{display:flex;gap:16px;color:var(--dark)}
+td .ic .del,.del{color:var(--red)}
+.tfoot{display:flex;justify-content:space-between;padding:12px 16px;font-size:10px;color:var(--muted)}
+.ph{padding:24px;min-height:260px;display:flex;flex-direction:column}
+.ph h4{font-size:17px;font-weight:400;color:var(--ink)}
+.ph small{margin-top:auto;border-top:1px solid var(--line);padding-top:12px;font-size:10px}
+/* tools */
+.tools{display:flex;gap:12px;margin-bottom:22px}
+.tools .s{position:relative}
+.tools input,.tools select{border:1px solid var(--line);background:#fff;padding:8px 12px;font:12px Roboto,sans-serif;border-radius:2px;color:var(--muted)}
+.tools .s i{position:absolute;right:10px;top:10px;font-size:12px}
+/* forms */
+.form{padding:34px 40px 28px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:20px 30px;align-items:start}
+label{display:block;font-size:13px;font-weight:700;margin-bottom:8px}
+input.f,select.f,textarea.f{width:100%;border:1px solid var(--line);background:#fff;border-radius:6px;padding:12px 14px;font:13px Roboto,sans-serif;color:var(--ink)}
+.peach input.f,.peach select.f,.peach textarea.f{background:var(--peach);border-color:#f5d9c8}
+textarea.f{min-height:130px;resize:vertical}
+.drop{border:1.5px dashed #bbb;background:#f6f1ea;border-radius:6px;min-height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:13px;gap:6px;text-align:center;overflow:hidden}
+.drop small{font-size:11px;color:var(--muted)}
+.drop img{width:100%;height:100%;object-fit:cover}
+.drop.p{background:var(--peach);border-color:#f5d9c8}
+.acts{display:flex;justify-content:flex-end;gap:12px;margin-top:22px}
+.acts .btn{padding:10px 18px;font-size:13px}
+.fld{margin-bottom:20px}
+.cnt{text-align:right;font-size:10px;color:var(--muted);margin-top:4px}
+.tag{background:var(--peach);color:var(--dark);font-size:10px;padding:3px 10px;border-radius:10px}
+.sw{display:flex;align-items:center;gap:8px;font-size:11px}
+.sw span.t{width:34px;height:18px;background:var(--brown);border-radius:10px;position:relative;display:inline-block;cursor:pointer;transition:.2s}
+.sw span.t:after{content:"";position:absolute;right:2px;top:2px;width:14px;height:14px;background:#fff;border-radius:50%;transition:.2s}
+.sw span.t.off{background:#ccc}.sw span.t.off:after{right:18px}
+.sw em{font-style:normal;background:#eee;padding:2px 8px;font-size:10px}
+.sec-h{display:flex;justify-content:space-between;align-items:center;margin:26px 0 12px}
+.sec-h:first-child{margin-top:0}
+.sec-h h3{font-size:15px;font-weight:500}
+/* login */
+body.login{display:grid;grid-template-columns:55% 45%;min-height:100vh;background:var(--cream)}
+.login .img{background:url(../img/login.jpg) center/cover}
+.login .pn{border-radius:45% 0 0 45%/50% 0 0 50%;background:var(--cream);margin-left:-120px;display:flex;align-items:center;padding:0 12% 0 120px;position:relative}
+.login .box{width:100%;max-width:390px}
+.login .bn{position:absolute;top:60px;left:150px;right:12%;max-width:390px;font-weight:500;border-bottom:1px solid var(--line);padding-bottom:22px;font-size:14px}
+.login h1{font-size:42px;margin-bottom:12px}
+.login p.s{color:var(--muted);font-size:15px;margin-bottom:30px;letter-spacing:.02em}
+.login label{font-size:13px}
+.login .pw{position:relative}
+.login .pw i{position:absolute;right:16px;top:17px;color:var(--muted);cursor:pointer}
+.login input.f{padding:16px;border-radius:2px;margin-bottom:20px;font-size:13px}
+.login .btn{width:100%;justify-content:center;padding:16px;font-size:15px;background:#6f563f;border-radius:2px}
+.login .n{text-align:center;font-size:12px;color:var(--muted);margin-top:18px}
+@media(max-width:800px){body{flex-direction:column}.side{width:100%;height:auto;position:static;padding:20px}.g3,.dl,.f2{grid-template-columns:1fr}body.login{grid-template-columns:1fr}.login .img{display:none}.login .pn{margin:0;border-radius:0;padding:40px 24px}.login .bn{left:24px}}
+</style></head>
+<body class="login"><div class="img"></div><div class="pn"><div class="bn">UD KARYA ABADI</div><form class="box" action="dashboard.html"><h1>Login Admin</h1><p class="s">Masuk untuk mengelola informasi website UD Karya Abadi.</p><label>Username</label><input class="f" placeholder="Masukkan username" required><label>Password</label><div class="pw"><input class="f" id="pw" type="password" placeholder="Masukkan password" required><i class="fa-regular fa-eye" id="eye"></i></div><button class="btn" type="submit">Masuk</button><p class="n">Halaman khusus admin</p></form></div><script>
+// Carousel material (beranda)
+document.querySelectorAll('.car').forEach(function (car) {
+  var track = car.querySelector('.track'), dots = car.parentElement.querySelectorAll('.dots i');
+  var btn = car.querySelector('.arrow');
+  if (btn) btn.onclick = function () { track.scrollBy({ left: 310, behavior: 'smooth' }); };
+  track.addEventListener('scroll', function () {
+    var i = Math.round(track.scrollLeft / 310);
+    dots.forEach(function (d, n) { d.classList.toggle('on', n === i); });
+  });
+});
+
+// Detail produk: thumbnail, warna, tab
+document.querySelectorAll('.th img').forEach(function (t) {
+  t.onclick = function () {
+    document.querySelector('.main').src = t.src;
+    document.querySelectorAll('.th img').forEach(function (x) { x.classList.remove('on'); });
+    t.classList.add('on');
+  };
+});
+document.querySelectorAll('.col i').forEach(function (c) {
+  c.onclick = function () {
+    document.querySelectorAll('.col i').forEach(function (x) { x.classList.remove('on'); });
+    c.classList.add('on');
+  };
+});
+document.querySelectorAll('.tabs a').forEach(function (a) {
+  a.onclick = function () {
+    document.querySelectorAll('.tabs a,.tp').forEach(function (x) { x.classList.remove('on'); });
+    a.classList.add('on');
+    document.getElementById(a.dataset.t).classList.add('on');
+  };
+});
+
+// FAQ: hanya satu terbuka
+document.querySelectorAll('.faq details').forEach(function (d) {
+  d.addEventListener('toggle', function () {
+    if (d.open) document.querySelectorAll('.faq details').forEach(function (o) { if (o !== d) o.open = false; });
+  });
+});
+
+// Form kontak -> WhatsApp
+var wa = document.getElementById('waForm');
+if (wa) wa.onsubmit = function (e) {
+  e.preventDefault();
+  var t = 'Halo UD Karya Abadi, saya ' + wa.nama.value + '. ' + wa.pesan.value;
+  window.open('https://wa.me/6281234567890?text=' + encodeURIComponent(t), '_blank');
+};
+
+// Admin: tampil/sembunyi password, toggle status, preview foto
+var eye = document.getElementById('eye');
+if (eye) eye.onclick = function () {
+  var p = document.getElementById('pw');
+  p.type = p.type === 'password' ? 'text' : 'password';
+  eye.className = p.type === 'password' ? 'fa-regular fa-eye' : 'fa-regular fa-eye-slash';
+};
+document.querySelectorAll('.t').forEach(function (t) { t.onclick = function () { t.classList.toggle('off'); t.parentElement.querySelector('em').textContent = t.classList.contains('off') ? 'Sembunyi' : 'Tampil'; }; });
+document.querySelectorAll('input[type=file]').forEach(function (f) {
+  f.onchange = function () {
+    var d = f.closest('.drop'); if (!d || !f.files[0]) return;
+    var im = d.querySelector('img') || d.appendChild(document.createElement('img'));
+    im.src = URL.createObjectURL(f.files[0]);
+  };
+});
+document.querySelectorAll('[data-confirm]').forEach(function (a) { a.onclick = function (e) { if (!confirm(a.dataset.confirm)) e.preventDefault(); }; });
+</script></body></html>
